@@ -250,19 +250,19 @@ def infer_paths(args: argparse.Namespace, benchmark_dict: dict) -> argparse.Name
     else:
         args.sdk_path = str(Path(args.sdk_path).parent.resolve())
 
-    args.venv_path = os.getenv("VIRTUAL_ENV")
-    if args.venv_path is None:
-        err = (
-            "It appears that a python virtual environment has not been "
-            "activated, determined by 'VIRTUAL_ENV' environment variable "
-            "not detected in this environment. Please make sure the python "
-            "virtual environment is activate in this environment (use "
-            "'source' when enabling/activating)."
-        )
-        logger.error(err)
-        raise EnvironmentError(err)
-    else:
-        args.venv_path = str(Path(args.venv_path).resolve())
+    # args.venv_path = os.getenv("VIRTUAL_ENV")
+    # if args.venv_path is None:
+    #     err = (
+    #         "It appears that a python virtual environment has not been "
+    #         "activated, determined by 'VIRTUAL_ENV' environment variable "
+    #         "not detected in this environment. Please make sure the python "
+    #         "virtual environment is activate in this environment (use "
+    #         "'source' when enabling/activating)."
+    #     )
+    #     logger.error(err)
+    #     raise EnvironmentError(err)
+    # else:
+    #     args.venv_path = str(Path(args.venv_path).resolve())
 
     return args
 
